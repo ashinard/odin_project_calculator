@@ -23,11 +23,11 @@ function Calculator(){
 }
 
 function pressed(e){
-    if(e.target.name === "c"){
+    if(e.target.name === "clear"){
         clear();
     }
-    else if(e.target.name === "="){
-        math.calculate(display.innerHTML);
+    else if(e.target.name === "equals"){
+        display.innerHTML = math.calculate(display.innerHTML);
     }
 }
 
