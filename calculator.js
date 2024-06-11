@@ -29,14 +29,14 @@ function pressed(e){
     else if(e.target.name === "+" || e.target.name === "-" 
     || e.target.name === "*" || e.target.name === "/"){
         if(indexOf(e.target.name)=== -1){
-            display.innerHTML += " " + e.target.name + " ";
+            display += " " + e.target.name + " ";
         }
     }
     else if(e.target.name === "equals"){
-        display.innerHTML = math.calculate(display.innerHTML);
+        display = math.calculate(display);
     }
     else{
-        display.innerHTML += e.target.name;
+        display += e.target.name;
     }
 }
 
