@@ -28,15 +28,15 @@ function pressed(e){
     }
     else if(e.target.name === "+" || e.target.name === "-" 
     || e.target.name === "*" || e.target.name === "/"){
-        if(dsipaly.innerHTML.indexOf(e.target.name) === -1){
-            display += " " + e.target.name + " ";
+        if(dsipaly.value.indexOf(e.target.name) === -1){
+            display.value += " " + e.target.innerHTML + " ";
         }
     }
     else if(e.target.name === "equals"){
-        display.innerHTML = math.calculate(display.innerHTML);
+        display.value = math.calculate(display.value);
     }
     else{
-        display += e.target.name;
+        display.value += e.target.innerHTML;
     }
 }
 
