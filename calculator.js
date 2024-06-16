@@ -28,12 +28,12 @@ function pressed(e){
     }
     else if(e.target.name === "+" || e.target.name === "-" 
     || e.target.name === "*" || e.target.name === "/"){
-        if(indexOf(e.target.name)=== -1){
+        if(dsipaly.innerHTML.indexOf(e.target.name) === -1){
             display += " " + e.target.name + " ";
         }
     }
     else if(e.target.name === "equals"){
-        display = math.calculate(display);
+        display.innerHTML = math.calculate(display.innerHTML);
     }
     else{
         display += e.target.name;
