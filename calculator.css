@@ -26,9 +26,6 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 30px;
-    width: 30px;
-    margin: 5px 5px;
 }
 .button{
     margin: 5px 5px;
@@ -36,3 +33,8 @@ body{
     border-width: 1px;
     border-radius: 20%;
 }
+
+.button > p{
+    padding: 5px;
+}
+
