@@ -26,9 +26,9 @@ function pressed(e){
     if(e.target.name === "clear"){
         clear();
     }
-    else if(e.target.name === "+" || e.target.name === "-" 
-    || e.target.name === "*" || e.target.name === "/"){
-        if(dsipaly.value.indexOf(e.target.name) === -1){
+    else if(e.target.innerHTML === "+" || e.target.innerHTML === "-" 
+    || e.target.innerHTML === "*" || e.target.innerHTML === "/"){
+        if(display.value.indexOf(e.target.innerHTML) === -1){
             display.value += " " + e.target.innerHTML + " ";
         }
     }
@@ -41,7 +41,7 @@ function pressed(e){
 }
 
 function clear(){
-    display.innerHTML = "";
+    display.value = "";
 }
 
 const math = new Calculator();
