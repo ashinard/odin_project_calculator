@@ -23,6 +23,13 @@ body{
 
 #display{
     height: 30px;
+    width: 180px;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    text-align: end;
+    padding: 5px;
 }
 
 #buttons{
@@ -31,7 +38,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .button{
