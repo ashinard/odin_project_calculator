@@ -27,8 +27,6 @@ function Calculator(){
 }
 
 function pressed(e){
-    let result = 0;
-
     if(e.target.name === "clear"){
         clear();
     }
@@ -44,8 +42,9 @@ function pressed(e){
         display.innerHTML = result;
     }
     else{
-        if(display.innerHTML === result){
+        if(display.innerHTML.includes(result)){
             clear();
+            result = 0;
         }
         display.innerHTML += e.target.innerHTML;
     }
@@ -57,6 +56,7 @@ function clear(){
 
 const math = new Calculator();
 const display = document.querySelector('#display');
-
 const buttons = document.querySelectorAll('.button');
+let result = 0;
+
 buttons.forEach(buttons => buttons.addEventListener('click', pressed));
