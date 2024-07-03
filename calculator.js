@@ -6,7 +6,7 @@ function Calculator(){
         "/": (a, b) => a / b
     };
 
-    this.calculate = function(str){
+    this.operate = function(str){
         let sep = str.split(' ');
 
         let a = parseInt(sep[0]);
@@ -14,7 +14,7 @@ function Calculator(){
         let b = parseInt(sep[2]);
 
         if(op === '/' && b === 0){
-            return 'Stop it. Get some help.'
+            return NaN;
         }
 
         if(!this.math[op] || isNaN(a) || isNaN(b))
@@ -22,7 +22,7 @@ function Calculator(){
                 return NaN
             }
 
-        return this.math[op](a, b);
+        return this.math[op](a, b); //calls math function
     };
 }
 
@@ -36,13 +36,23 @@ function pressed(e){
            display.innerHTML.indexOf('*') === -1 && display.innerHTML.indexOf('/') === -1){
             display.innerHTML += " " + e.target.innerHTML + " ";
         }
+        else{
+            result = math.operate(display.innerHTML);
+            
+            if(isNaN(result)){
+                display.innerHTML = result;
+            }
+            else{
+                display.innerHTML = result + " " + e.target.innerHTML + " ";
+            }
+        }
     }
     else if(e.target.name === "equals"){
-        result = math.calculate(display.innerHTML);
+        result = math.operate(display.innerHTML); //calls operate function from Calculator constructor
         display.innerHTML = result;
     }
     else{
-        if(display.innerHTML.includes(result)){
+        if(display.innerHTML === result.toString() || display.innerHTML === "NaN"){
             clear();
             result = 0;
         }
