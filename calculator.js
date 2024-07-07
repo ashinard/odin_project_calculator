@@ -39,10 +39,7 @@ function pressed(e){
         else{
             result = math.operate(display.innerHTML);
             
-            if(isNaN(result)){
-                display.innerHTML = result;
-            }
-            else{
+            if(!isNaN(result)){
                 display.innerHTML = result + " " + e.target.innerHTML + " ";
             }
         }
