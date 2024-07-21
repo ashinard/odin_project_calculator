@@ -34,7 +34,12 @@ function pressed(e){
     || e.target.innerHTML === "*" || e.target.innerHTML === "/"){
         if(display.innerHTML.indexOf('+') === -1 && display.innerHTML.indexOf('-') === -1 &&
            display.innerHTML.indexOf('*') === -1 && display.innerHTML.indexOf('/') === -1){
-            display.innerHTML += " " + e.target.innerHTML + " ";
+            if(display.innerHTML !== "NaN"){
+                display.innerHTML += " " + e.target.innerHTML + " ";
+            }
+            else if(display.innerHTML === "NaN"){
+                display.innerHTML = 0 + " " + e.target.innerHTML + " ";
+            }
         }
         else{
             result = math.operate(display.innerHTML);
