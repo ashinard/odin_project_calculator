@@ -30,6 +30,8 @@ body{
     border-width: 1px;
     text-align: end;
     padding: 5px;
+    font-size: x-large;
+    margin: 15px 0px;
 }
 
 #buttons{
@@ -38,7 +40,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .button{
@@ -51,6 +53,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: large;
 }
 
 
